@@ -1,21 +1,4 @@
-function TennisGame() {
-  this.reset = () => {
-
-  }
-
-  this.echo = ()=>{
-
-    return 'Love-Love'
-
-  }
-
-}
-
-
-
-
-
-
+const TennisGame = require('./tennispoint.js');
 
 
 
@@ -39,23 +22,23 @@ test ('Echo "Love - Love" when game start',()=>{
 
 
   //Assert
-  expect(result).toBe('Love-Love')
+  expect(result).toBe('Love - Love')
 })
 
 
-//test('Echo "Fifteen - Love" when playerA gets firt score',()=>{
+test('Echo "Fifteen - Love" when playerA gets firt score',()=>{
 
 //Arrange
 
-//let app = new TennisGame()
-//app.playerAgetScore()
+let app = new TennisGame()
+app.playerAgetScore()
 
 //Act
-//let result = app.echo()
+let result = app.echo()
 
 //Assert
-//expect(result).toBe('Fifteen - Love')
+expect(result).toBe('Fifteen - Love')
 
 
 
-//})
+})
