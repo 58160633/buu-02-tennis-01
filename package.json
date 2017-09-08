@@ -2,16 +2,22 @@
   "name": "tennis",
   "version": "1.0.0",
   "main": "tennis.spec.js",
-  "dependencies": {
-    "jest": "^20.0.4"
-  },
+  "dependencies": {},
   "devDependencies": {
     "jest": "^20.0.4"
   },
   "scripts": {
-    "test": "node_modules/.bin/jest"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/58160633/Tennis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/58160633/Tennis/issues"
+  },
+  "homepage": "https://github.com/58160633/Tennis#readme",
   "description": ""
 }
