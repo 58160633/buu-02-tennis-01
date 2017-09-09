@@ -2,7 +2,9 @@ const TennisGame = require('./tennispoint.js');
 
 
 //ไฟล์test
-test ('Echo "Love - Love" when game start',()=>{
+describe('echo()', function(){
+
+it ('should return "Love - Love" when game start',()=>{
           //Arrange
           let app = new TennisGame()
           //Act
@@ -15,7 +17,7 @@ test ('Echo "Love - Love" when game start',()=>{
 
 
 
-test('Echo "Fifteen - Love" when playerA gets firt score',()=>{
+it('should return "Fifteen - Love" when playerA gets firt score',()=>{
         //Arrange
         let app = new TennisGame()
         //Act
@@ -26,7 +28,7 @@ test('Echo "Fifteen - Love" when playerA gets firt score',()=>{
         expect(result).toBe('Fifteen - Love')
 })
 
-test('Echo "Love - Fifteen" when playerB gets firt score',()=>{
+it('should return "Love - Fifteen" when playerB gets firt score',()=>{
   //Arrange
 
   let app = new TennisGame()
@@ -40,7 +42,7 @@ test('Echo "Love - Fifteen" when playerB gets firt score',()=>{
   expect(result).toBe('Love - Fifteen')
 })
 
-test('Echo "Thirty - Fifteen" when playerA gets two score and playerB gets firt score',()=>{
+it('should return "Thirty - Fifteen" when playerA gets two score and playerB gets firt score',()=>{
         //Arrange
         let app = new TennisGame()
         //Act
@@ -55,7 +57,7 @@ test('Echo "Thirty - Fifteen" when playerA gets two score and playerB gets firt 
 
 
 
-test('Echo "Thirty - Thirty" when playerA and playerB gets two score',()=>{
+it('should return "Thirty - Thirty" when playerA and playerB gets two score',()=>{
       //Arrange
       let app = new TennisGame()
       //Act
@@ -73,7 +75,9 @@ test('Echo "Thirty - Thirty" when playerA and playerB gets two score',()=>{
 
 
 
-test('Echo "The winner is player A"when playerA gets last score after game point',()=>{
+it('should return "The winner is player A"when playerA gets last score after game point',()=>{
+//Arrange
+
 let app = new TennisGame()
 
 //Act
@@ -83,6 +87,7 @@ app.playerAgetScore()
 app.playerAgetScore()
 app.playerAgetScore()
 
+//Assert
 
 let result = app.echo()
 expect(result).toBe('The winner is player A')
@@ -100,7 +105,8 @@ expect(result).toBe('The winner is player A')
 
 
 
-test('Echo "The winner is player B"when playerB gets last score after game point',()=>{
+it('should return "The winner is player B"when playerB gets last score after game point',()=>{
+//Arrange
 let app = new TennisGame()
 
 //Act
@@ -110,7 +116,7 @@ app.playerBgetScore()
 app.playerBgetScore()
 app.playerBgetScore()
 
-
+//Assert
 let result = app.echo()
 expect(result).toBe('The winner is player B')
 
@@ -122,8 +128,10 @@ expect(result).toBe('The winner is player B')
 })
 
 
-test('Echo "deuce" when playerA and playerB points are always the same',()=>{
+it('should return "deuce" when playerA and playerB points are always the same',()=>{
+//Arrange
   let app = new TennisGame()
+//Act
   app.reset()
   app.playerAgetScore()
   app.playerAgetScore()
@@ -131,7 +139,7 @@ test('Echo "deuce" when playerA and playerB points are always the same',()=>{
   app.playerBgetScore()
   app.playerBgetScore()
   app.playerBgetScore()
-
+//Assert
   let result = app.echo()
   expect(result).toBe('deuce')
 
@@ -139,8 +147,10 @@ test('Echo "deuce" when playerA and playerB points are always the same',()=>{
 })
 
 
-test('Echo "Advantage playerA" when playerA gets score after deuce',()=>{
+it('should return "Advantage playerA" when playerA gets score after deuce',()=>{
+//Arrange
   let app = new TennisGame()
+  //Act
   app.reset()
   app.playerAgetScore()
   app.playerAgetScore()
@@ -149,15 +159,17 @@ test('Echo "Advantage playerA" when playerA gets score after deuce',()=>{
   app.playerBgetScore()
   app.playerBgetScore()
   app.playerAgetScore()
-
+//Assert
   let result = app.echo()
   expect(result).toBe('Advantage playerA')
 
 })
 
 
-test('Echo "Advantage playerB" when playerB gets score after deuce',()=>{
+it('should return "Advantage playerB" when playerB gets score after deuce',()=>{
+  //Arrange
   let app = new TennisGame()
+  //Act
   app.reset()
   app.playerAgetScore()
   app.playerAgetScore()
@@ -166,16 +178,17 @@ test('Echo "Advantage playerB" when playerB gets score after deuce',()=>{
   app.playerBgetScore()
   app.playerBgetScore()
   app.playerBgetScore()
-
+//Assert
   let result = app.echo()
   expect(result).toBe('Advantage playerB')
 
 })
 
-test('Echo "The winner is player B" when playerB gets score after advantage',()=>{
+it('should return "The winner is player B" when playerB gets score after advantage',()=>{
+//Arrange
   let app = new TennisGame()
+//Act
   app.reset()
-
   app.playerAgetScore()
   app.playerAgetScore()
   app.playerAgetScore()
@@ -184,11 +197,10 @@ test('Echo "The winner is player B" when playerB gets score after advantage',()=
   app.playerBgetScore()
   app.playerBgetScore()
   app.playerBgetScore()
-
-
-
-
+  //Assert
   let result = app.echo()
   expect(result).toBe('The winner is player B')
+
+})
 
 })
