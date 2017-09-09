@@ -26,7 +26,19 @@ test('Echo "Fifteen - Love" when playerA gets firt score',()=>{
         expect(result).toBe('Fifteen - Love')
 })
 
+test('Echo "Love - Fifteen" when playerB gets firt score',()=>{
+  //Arrange
 
+  let app = new TennisGame()
+  //Act
+
+  app.reset()
+  app.playerBgetScore()
+  let result = app.echo()
+  //Assert
+
+  expect(result).toBe('Love - Fifteen')
+})
 
 test('Echo "Thirty - Fifteen" when playerA gets two score and playerB gets firt score',()=>{
         //Arrange
